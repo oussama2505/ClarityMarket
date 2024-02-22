@@ -48,10 +48,13 @@ En el corazón de nuestra plataforma está nuestro compromiso con el bienestar d
 3. Crea la base de datos y la tabla:
     - Crea una base de datos llamada: clarity_market
 4. - Importa el siguiente archivo: [Descargar archivo ZIP](/resources/imgReadme/clarity_market.sql.zip)
-    
+5. Después de abrir el proyecto en Visual Studio Code, en la terminal escribe el comando *composer install*
 
-5. Ademas, debes crear un archivo .env en la base de los archivos y modificar las variables segun uses XAMPP o MAMP.
-     DDBB_HOST="localhost";
-     DDBB_USER="user";
-     DDBB_PASSWORD="password";
-     DDBB_NAME="bookworms_library";
+6. Ademas, debes crear un archivo .env en la base de los archivos y modificar las variables segun uses XAMPP o MAMP.
+    - XAMPP:
+       - DOMAIN=http://localhost
+       - DB_PASSWORD=
+         
+    - MAMP:
+       - DOMAIN=http://localhost:8888
+       - DB_PASSWORD=root
