@@ -1,18 +1,21 @@
            <!-- Modal Search Start -->
            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-dialog">
                 <div class="modal-content rounded-0">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Busca por autor o titulo</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body d-flex align-items-center">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <form class="searchBox" action="/marketplace/src/view/shop.php" method="GET">
-                                <input type="search" class="form-control p-3" autocomplete="off" label="Search"  aria-describedby="search-icon-1" style="color: #345457;" placeholder="Search by title/ author" name="keyword" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword'] : '' ?>">
-                            </form>
-                            <span id="search-icon-1" class="input-group-text p-3"><button type="submit" name="search"></button></span>
-                        </div>
+                        <form class="searchBox" action="shop.php" method="GET">
+                            <div class="input-group w-100 mx-auto d-flex">
+                                <input type="search" class="form-control p-3" autocomplete="off" label="Search" aria-describedby="search-icon-1" style="color: #345457;" placeholder="Search by title/author" name="keyword" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword'] : '' ?>">
+                                <button type="submit" class="btn btn-outline-secondary" name="search" id="search-icon-1">
+                                    <img src="http://localhost/marketplace/assets/img/lupa.png" alt="Search" style="width: 20px; height: 20px;">
+                                </button>
+                                
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -36,7 +36,7 @@ class BookModel
 
     public function searchBooks($keyword, $offset, $limit) {
         $keyword = "%$keyword%";
-        $statement = $this->pdo->prepare("SELECT * FROM clarity_market.books WHERE title LIKE :keyword OR author LIKE :keyword LIMIT :limit OFFSET :offset");
+        $statement = $this->pdo->prepare("SELECT * FROM clarity_market.books WHERE titulo LIKE :keyword OR autor LIKE :keyword LIMIT :limit OFFSET :offset");
         $statement->bindValue(':keyword', $keyword, PDO::PARAM_STR);
         $statement->bindValue(':limit', $limit, PDO::PARAM_INT);
         $statement->bindValue(':offset', $offset, PDO::PARAM_INT);
@@ -46,7 +46,7 @@ class BookModel
 
     public function getTotalBooksSearched($keyword) {
         $keyword = "%$keyword%";
-        $statement = $this->pdo->prepare("SELECT COUNT(*) FROM clarity_market.books WHERE title LIKE :keyword OR author LIKE :keyword");
+        $statement = $this->pdo->prepare("SELECT COUNT(*) FROM clarity_market.books WHERE titulo LIKE :keyword OR autor LIKE :keyword");
         $statement->bindValue(':keyword', $keyword, PDO::PARAM_STR);
         $statement->execute();
         return $statement->fetchColumn();

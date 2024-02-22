@@ -13,10 +13,15 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 // Ensure page is at least 1
 $page = max($page, 1);
 
-// Get books by page
-$books = $controller->getBooksByPage($page);
 
-$totalBooks = $controller->getTotalBooksCount();
+if (isset($_GET['search']) && isset($_GET['keyword'])) {
+    $keyword = $_GET['keyword'];
+    $books = $controller->searchBooks($keyword, $page);
+    $totalBooks = $controller->getTotalBooksSearched($keyword);
+} else {
+    $books = $controller->getBooksByPage($page);
+    $totalBooks = $controller->getTotalBooksCount();
+}
 
 $totalPages = ceil($totalBooks / 10);
 
