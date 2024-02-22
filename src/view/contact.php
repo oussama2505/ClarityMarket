@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '../../../vendor/autoload.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,16 +22,27 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="/resources/css/style.css" rel="stylesheet">
+        <link href="../../resources/css/style.css" rel="stylesheet">
     </head>
 
     <body>
-        <?php require "../view/components/header.php" ?>
-        <h1>¡Contáctanos! </h1>
-        <?php require "../view/components/footer.php" ?>
+        <?php require "../view/components/header.html" ?>
+        
+    <!-- Hero Start -->
+    <div class="container-fluid py-5 mb-5 hero-header" style="background-image: url('assets/img/papiro.jpg'); background-size: cover; background-position: center;">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-12 col-lg-7">
+                    <h1 class="mb-5 display-3" style="color: #345457;">¡Contáctanos!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+        <?php require "../view/components/footer.html" ?>
       
     </body>
 

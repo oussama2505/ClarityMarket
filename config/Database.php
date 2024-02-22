@@ -10,7 +10,7 @@ class Database{
     private $host = 'localhost'; 
     private $user = 'root'; 
     private $password;
-    private $dbname = 'clarity_market'; 
+    private $dbname = 'library'; 
 
     public function __construct() {
       $dotenv = Dotenv::createImmutable(__DIR__ . '/../');

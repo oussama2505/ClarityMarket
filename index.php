@@ -1,42 +1,14 @@
 <?php
-// index.php
-
-// Iniciar la sesión
-// session_start();
 
 use Config\Database;
-// use Controller\UserController;
-// use Model\UserModel;
+
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-// $dotenv->load();
-
-// $action = $_GET['action'] ?? '';
 
 $con = new Database;
-// $db = $con->connection();
 var_dump($con->connection());
-// $loginModel = new UserModel($db);
-// $loginController = new UserController($loginModel);
 
-// // Verificar si el usuario está logueado
-// $isLoggedIn = isset($_SESSION['last_name']);
-
-// if ($action === 'login') {
-//     // Si el usuario está logueado y trata de acceder a la página de login, redirigirlo a otra página
-//     if ($isLoggedIn) {
-//         header("Location: " . $_ENV['DOMAIN'] . "The-Library-book/index.php?action=logout");
-//         exit();
-//     }
-//     $loginController->processLogin();
-// } elseif ($action === 'logout') {
-//     // Si el usuario intenta hacer logout, destruir la sesión y redirigirlo a la página de login
-//     session_destroy();
-//     header("Location: " . $_ENV['DOMAIN'] . "The-Library-book/index.php?action=login");
-//     exit();
-// }
 ?>
 
 <!DOCTYPE html>
@@ -71,9 +43,98 @@ var_dump($con->connection());
     </head>
 
 <body>
-  <?php require "./src/view/components/header.php" ?>
-  <!-- <?php require "./src/view/components/homeMain.php" ?>
-  <?php require "./src/view/components/footer.php" ?> 
+  <?php require "./src/view/components/header.html" ?>
+
+       <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1" style="color: #345457;">
+                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Modal Search End -->
+
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid py-5 mb-5 hero-header" style="background-image: url('assets/img/papiro.jpg'); background-size: cover; background-position: center;">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-12 col-lg-7">
+                    <h1 class="mb-5 display-3" style="color: #345457;">¿Qué te apetece leer hoy?</h1>
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
+                        <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%; color: #345457;">Submit Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+        <!-- Featurs Start -->
+        <div class="container-fluid service py-5">
+            <div class="container py-5">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <a href="#">
+                            <div class="service-item bg-secondary rounded border border-secondary">
+                                <img src="assets/img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="px-4 rounded-bottom">
+                                    <div class="service-content bg-primary text-center p-4 rounded">
+                                        <h5 class="text-white">Fresh Apples</h5>
+                                        <h3 class="mb-0">20% OFF</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="#">
+                            <div class="service-item bg-dark rounded border border-dark">
+                                <img src="assets/img/featur-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="px-4 rounded-bottom">
+                                    <div class="service-content bg-light text-center p-4 rounded">
+                                        <h5 class="text-primary">Tasty Fruits</h5>
+                                        <h3 class="mb-0">Free delivery</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="#">
+                            <div class="service-item bg-primary rounded border border-primary">
+                                <img src="assets/img/featur-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="px-4 rounded-bottom">
+                                    <div class="service-content bg-secondary text-center p-4 rounded">
+                                        <h5 class="text-white">Exotic Vegitable</h5>
+                                        <h3 class="mb-0">Discount 30$</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Featurs End -->
+
+
+
+
+  <?php require "./src/view/components/footer.html" ?> 
 
 </body>
 
