@@ -3,7 +3,7 @@
 // Utilities
 
 $utilities: () !default;
-// stylelint-disable-next-line sresources/css/dollar-variable-default
+// stylelint-disable-next-line scss/dollar-variable-default
 $utilities: map-merge(
   (
     // scss-docs-start utils-vertical-align

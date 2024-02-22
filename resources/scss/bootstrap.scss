@@ -2,7 +2,7 @@
 
 $primary: #81C408;
 $secondary: #FFB524;
-$light: #ffffff;
+$light: #F4F6F8;
 $dark: #45595B;
 
 $font-family-base: 'Open Sans', sans-serif;
@@ -29,4 +29,4 @@ $link-decoration: none;
 
 $enable-negative-margins: true;
 
-@import "bootstrap/resources/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";

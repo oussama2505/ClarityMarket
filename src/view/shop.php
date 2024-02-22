@@ -2,13 +2,26 @@
 
 use Controller\BookController;
 
+
 require_once __DIR__ . '../../../vendor/autoload.php';
 
 $controller = new BookController;
-$books = $controller->getBooks();
 
+// Get the current page from the URL, default to 1 if not provided
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+// Ensure page is at least 1
+$page = max($page, 1);
+
+// Get books by page
+$books = $controller->getBooksByPage($page);
+
+$totalBooks = $controller->getTotalBooksCount();
+
+$totalPages = ceil($totalBooks / 10);
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,7 +132,11 @@ $books = $controller->getBooks();
     </div>
     <!-- Fruits Shop End-->
 
-
+    <div class="pagination">
+                <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                <a href="?page=<?= $i ?>&isAdmin=<?= isset($_SESSION['role']) && $_SESSION['role'] === 'Administrador' ? 'true' : 'false' ?>&<?= session_name() ?>=<?= session_id() ?>" class="pagination-btn"><?= $i ?></a>
+                <?php endfor; ?>
+            </div>
 
 
     <!-- Banner Section Start-->
