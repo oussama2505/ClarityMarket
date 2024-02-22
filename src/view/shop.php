@@ -143,7 +143,7 @@ $totalPages = ceil($totalBooks / 10);
                     <div class="py-4 containerSuggest">
                         <h1 class="text-dark">¿Quieres que te recomendemos algún libro?</h1>
                         <br>
-                        <a href="#" class="buttonSuggest border-2 border-white rounded-pill text-dark py-3 px-5">Te ayudamos</a>
+                        <a href="http://localhost/marketplace/src/view/suggestions.php" class="buttonSuggest border-2 border-white rounded-pill text-dark py-3 px-5">Te ayudamos</a>
                     </div>
                 </div>
             </div>

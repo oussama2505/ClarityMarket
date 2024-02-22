@@ -53,7 +53,7 @@ $con->connection();
                 
                 <div class="d-flex  justify-content-between">
                 <h1 class="indexTitle">¿Tienes claro qué quieres leer hoy?</h1>
-                <a class="first" href="#" >¡Sí!</a>
+                <a class="first" href="http://localhost/marketplace/src/view/shop.php" >¡Sí!</a>
                 <a class="second" href="#" >No, ¡ayúdame!</a>
                 </div>
             </div>
