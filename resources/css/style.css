@@ -137,14 +137,7 @@
     color: #ffffff; /* Cambia el color del texto y los iconos a blanco */
 }
 
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 700;
-    vertical-align: middle;
-    margin-left: 8px;
-}
+
 .logo {
     width: 120px; 
 }
