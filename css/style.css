@@ -124,15 +124,17 @@
 }
 
 .navbar {
-    height: 100px;
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    background-color: #345457; 
+  
 }
 
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active,
-.fixed-top.bg-white .navbar .navbar-nav .nav-link:hover,
-.fixed-top.bg-white .navbar .navbar-nav .nav-link.active {
-    color: var(--bs-primary);
+.navbar .navbar-brand h1,
+.navbar .nav-item .nav-link,
+.navbar-toggler span.fa,
+.fa-shopping-bag,
+.fas.fa-user,
+.fas.fa-search {
+    color: #ffffff; /* Cambia el color del texto y los iconos a blanco */
 }
 
 .navbar .dropdown-toggle::after {
@@ -143,6 +145,10 @@
     vertical-align: middle;
     margin-left: 8px;
 }
+.logo {
+    width: 120px; 
+}
+
 
 @media (min-width: 1200px) {
     .navbar .nav-item .dropdown-menu {
