@@ -8,6 +8,19 @@ body{
     margin-top: auto;
   }
 
+.indexTitle{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+
+}
+
+.filterContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
 
 /*** Spinner Start ***/
 #spinner {
@@ -424,9 +437,20 @@ body{
 
 
 /*** Shop page start ***/
+.buttonSuggest{
+    background-color: #E8C4C6;
+}
+
+.bannerSuggest{
+    width: 100%;
+    background-size: cover;
+    height: 700px;
+}
+
 .shopContainers{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -450,8 +474,13 @@ body{
 
 
 /*** Single Page Start ***/
+
+
 .pagination {
-    display: inline-block;
+    justify-content: right;
+    align-items: end;
+    width: 100%;
+    padding-right: 50px;
 }
   
 .pagination a {
@@ -459,17 +488,10 @@ body{
     padding: 10px 16px;
     text-decoration: none;
     transition: 0.5s;
-    border: 1px solid var(--bs-secondary);
+    border: 1px solid var(--bs-dark);
     margin: 0 4px;
 }
   
-.pagination a.active {
-    background-color: var(--bs-primary);
-    color: var(--bs-light);
-    border: 1px solid var(--bs-secondary);
-}
-  
-.pagination a:hover:not(.active) {background-color: var(--bs-primary)}
 
 .nav.nav-tabs .nav-link.active {
     border-bottom: 2px solid var(--bs-secondary) !important;

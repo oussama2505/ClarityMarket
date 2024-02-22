@@ -56,31 +56,33 @@ $totalPages = ceil($totalBooks / 10);
     <!-- Fruits Shop Start-->
     <div class="container-fluid fruite py-5">
         <div class="container py-5">
-            <div class="tab-class text-center">
-                <div class="row g-4">
-                    <div class="col-lg-4 text-start">
-                        <h1>Our Organic Products</h1>
-                    </div>
+            <div>
+                <div class="filterContainer">
                     <div class="col-lg-8 text-end">
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
                             <li class="nav-item">
                                 <a class="d-flex m-2 py-2 bg-dark rounded-pill border" data-bs-toggle="pill" href="#tab-1">
-                                    <span class="text-white" style="width: 130px;">Categoria</span>
+                                    <span class="text-white" style="width: 130px;"><img src="../../assets/img/bookmark.svg" alt=""> Categoria</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="d-flex py-2 px-4 m-2 bg-white rounded-pill border" data-bs-toggle="pill" href="#tab-2">
-                                    <span class="text-dark" style="width: auto;">Tiempo de lectura</span>
+                                    <span class="text-dark" style="width: auto;"><img src="../../assets/img/schedule.svg" alt=""> Tiempo de lectura</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="d-flex m-2 py-2 bg-white rounded-pill border" data-bs-toggle="pill" href="#tab-3">
-                                    <span class="text-dark" style="width: 130px;">Enfoque</span>
+                                    <span class="text-dark" style="width: 130px;"><img src="../../assets/img/visibility.svg" alt=""> Enfoque</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="d-flex m-2 py-2 bg-white rounded-pill border" data-bs-toggle="pill" href="#tab-4">
-                                    <span class="text-dark" style="width: 130px;">Localización</span>
+                                    <span class="text-dark" style="width: 130px;"><img src="../../assets/img/icon _map pin_.svg" alt=""> Localización</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex m-2 py-2 bg-white rounded-pill border" data-bs-toggle="pill" href="#tab-4">
+                                    <span class="text-dark" style="width: 130px;"><img src="../../assets/img/bag_blue.png" alt=""> Comprar</span>
                                 </a>
                             </li>
                         </ul>
@@ -105,7 +107,7 @@ $totalPages = ceil($totalBooks / 10);
                                                          <p><?= $book['autor'] ?></p> 
                                                         <div class="d-flex justify-content-between flex-lg-wrap">
                                                             <p class="text-dark fs-5 fw-bold mb-0"><?= $book['precio'] ?>€</p>
-                                                            <a href="#" class="btn border border-secondary rounded-pill px-3"><img src="http://localhost/marketplace/assets/img/icon _bag 2_.svg"></img> Comprar</a>
+                                                            <a href="#" class="btn border border-secondary rounded-pill px-3"><img src="../../assets/img/icon _bag 2_.svg"></img> Comprar</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -134,27 +136,14 @@ $totalPages = ceil($totalBooks / 10);
 
 
     <!-- Banner Section Start-->
-    <div class="container-fluid banner bg-secondary my-5">
+    <div class=" bannerSuggest w-100 mt-5" style="background-image: url('../../assets/img/cesta-libros.jpg'); background-repeat: no-repeat;">
         <div class="container py-5">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6">
-                    <div class="py-4">
-                        <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
-                        <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
-                        <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
-                        <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="position-relative">
-                        <img src="../assets/img/cesta-libros.jpg" class="img-fluid w-100 rounded" alt="">
-                        <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
-                            <h1 style="font-size: 100px;">1</h1>
-                            <div class="d-flex flex-column">
-                                <span class="h2 mb-0">50$</span>
-                                <span class="h4 text-muted mb-0">kg</span>
-                            </div>
-                        </div>
+                    <div class="py-4 containerSuggest">
+                        <h1 class="text-dark">¿Quieres que te recomendemos algún libro?</h1>
+                        <br>
+                        <a href="#" class="buttonSuggest border-2 border-white rounded-pill text-dark py-3 px-5">Te ayudamos</a>
                     </div>
                 </div>
             </div>

@@ -50,15 +50,12 @@ $con->connection();
         <div class="carousel-inner w-full" role="listbox">
             <div class="carousel-item active rounded w-100">
                 <img src="assets/img/ClarityBook1.png" class="w-100"alt="First slide">
+                
                 <div class="d-flex  justify-content-between">
+                <h1 class="indexTitle">¿Tienes claro qué quieres leer hoy?</h1>
                 <a class="first" href="#" >¡Sí!</a>
                 <a class="second" href="#" >No, ¡ayúdame!</a>
                 </div>
-               
-            </div>
-            <div class="carousel-item rounded">
-                <img src="assets/img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
