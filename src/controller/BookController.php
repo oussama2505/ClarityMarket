@@ -18,7 +18,7 @@ class BookController
         $this->model->getBooks() : "No hay libros disponibles";
     }
     
-    public function getBooksByPage($page, $limit = 10) {
+    public function getBooksByPage($page, $limit = 8) {
     $offset = ($page - 1) * $limit;
         return $this->model->getBooksByPage($offset, $limit);
     }
@@ -37,8 +37,4 @@ class BookController
         return $this->model->getTotalBooksSearched($keyword);
     }
 
-
-    public function addBook($title, $author, $isbn, $description, $image_path) {
-        return $this->model->addBook($title, $author, $isbn, $description, $image_path);
-    }
 }

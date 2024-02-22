@@ -64,54 +64,48 @@ $totalPages = ceil($totalBooks / 10);
                     <div class="col-lg-8 text-end">
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
                             <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                                    <span class="text-dark" style="width: 130px;">All Products</span>
+                                <a class="d-flex m-2 py-2 bg-dark rounded-pill border" data-bs-toggle="pill" href="#tab-1">
+                                    <span class="text-white" style="width: 130px;">Categoria</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                    <span class="text-dark" style="width: 130px;">Vegetables</span>
+                                <a class="d-flex py-2 px-4 m-2 bg-white rounded-pill border" data-bs-toggle="pill" href="#tab-2">
+                                    <span class="text-dark" style="width: auto;">Tiempo de lectura</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                                    <span class="text-dark" style="width: 130px;">Fruits</span>
+                                <a class="d-flex m-2 py-2 bg-white rounded-pill border" data-bs-toggle="pill" href="#tab-3">
+                                    <span class="text-dark" style="width: 130px;">Enfoque</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                                    <span class="text-dark" style="width: 130px;">Bread</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                                    <span class="text-dark" style="width: 130px;">Meat</span>
+                                <a class="d-flex m-2 py-2 bg-white rounded-pill border" data-bs-toggle="pill" href="#tab-4">
+                                    <span class="text-dark" style="width: 130px;">Localización</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-4">
-                            <div class="col-lg-12">
+                <div>
+                    <div>
+                        <div >
+                            <div class="shopContainers">
                                 <?php
                                 if (is_array($books)) :
                                     foreach ($books as $book) :
                                 ?>
-                                        <div class="row g-4">
-                                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                        <div>
+                                            <div class="cardProduct border border-secondary rounded">
                                                 <div class="rounded position-relative fruite-item">
                                                     <div class="fruite-img">
-                                                        <!-- <img src="data:image/jpeg; base64,<?= base64_encode($book['image']) ?>" class="rounded-3 card-img-top py-3 px-5 " alt="Book Image"> -->
+                                                        <img src="data:image/jpeg; base64,<?= base64_encode($book['imagen_libro']) ?>" class="rounded-3 card-img-top py-3 px-5 imageBook" alt="Book Image">
                                                     </div>
-                                                    <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
-                                                    <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                         <h4><?= $book['title'] ?></h4> 
-                                                         <p><?= $book['author'] ?></p> 
+                                                    <div class="p-4">
+                                                         <h4><?= $book['titulo'] ?></h4> 
+                                                         <p><?= $book['autor'] ?></p> 
                                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                                            <!-- <p class="text-dark fs-5 fw-bold mb-0"><?= $book['precio'] ?></p> -->
-                                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                            <p class="text-dark fs-5 fw-bold mb-0"><?= $book['precio'] ?>€</p>
+                                                            <a href="#" class="btn border border-secondary rounded-pill px-3"><img src="http://localhost/marketplace/assets/img/icon _bag 2_.svg"></img> Comprar</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -134,7 +128,7 @@ $totalPages = ceil($totalBooks / 10);
 
     <div class="pagination">
                 <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-                <a href="?page=<?= $i ?>&isAdmin=<?= isset($_SESSION['role']) && $_SESSION['role'] === 'Administrador' ? 'true' : 'false' ?>&<?= session_name() ?>=<?= session_id() ?>" class="pagination-btn"><?= $i ?></a>
+                <a href="?page=<?= $i ?>&<?= session_name() ?>=<?= session_id() ?>" class="pagination-btn"><?= $i ?></a>
                 <?php endfor; ?>
             </div>
 
@@ -153,7 +147,7 @@ $totalPages = ceil($totalBooks / 10);
                 </div>
                 <div class="col-lg-6">
                     <div class="position-relative">
-                        <img src="../assets/img/baner-1.png" class="img-fluid w-100 rounded" alt="">
+                        <img src="../assets/img/cesta-libros.jpg" class="img-fluid w-100 rounded" alt="">
                         <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
                             <h1 style="font-size: 100px;">1</h1>
                             <div class="d-flex flex-column">
